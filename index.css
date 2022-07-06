@@ -1,0 +1,518 @@
+body{
+    
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper{
+    /* Created with https://www.css-gradient.com */
+    background: -webkit-radial-gradient(top, #1E3253, #16193C);
+    background: -moz-radial-gradient(top, #1E3253, #16193C);
+    background: radial-gradient(to bottom, #1E3253, #16193C);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#scoreBlock{
+    width: 80%;
+    border-radius: 10px;
+    border: 3px solid #596780;
+    display: flex;
+    padding: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#scoreBlock ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#score{
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80px;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;
+    color: blue ;
+}
+
+#score h5{
+    margin: 0;
+    margin-top: 0.8rem;
+    font-size: 12px;
+}
+
+.scoreNumber{
+    margin: 0;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.658);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 765px;
+}
+
+.gameChoices{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 9.3rem;
+    width: 220px;
+    height: 200px;
+}
+.gameChoices button{
+    border: none;
+    cursor: pointer;
+}
+.pentaImg{
+    width: 100%;
+    height: 100%;
+}
+
+#pentagon img{
+    width: 40px;
+    height: 40px;
+}
+
+.roundBorder{
+    border-radius: 50%;
+}
+
+.gameImg{
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.shadow-top{
+    box-shadow: inset 0px 8px 2px -3px #d1d1d1;
+}
+
+.scissors,.paper,.rock,.lizard,.spock{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.invisible{
+    display: none;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.scissors{
+    background-color: #eba724ff;
+    right: calc(50% - 50px);
+    top: -50px;
+    box-shadow: inset 0px -5px 0px 0px #be681c;
+}
+
+.paper{
+    background-color: #5270f5ff;
+    top: 25px;
+    right: -35px;
+    box-shadow: inset 0px -5px 2px 0px #2841b5ff;
+}
+
+.rock{
+    background-color: #dc3c5aff;
+    bottom: -35px;
+    right: 0px;
+    box-shadow: inset 0px -5px 2px 0px #811633ff;
+}
+
+.lizard{
+    background-color:#895be4ff ;
+    bottom: -35px;
+    left: 0px;
+    box-shadow: inset 0px -5px 2px 0px #5f37a8ff;
+}
+
+.spock{
+    background-color: #4ebbceff;
+    top: 25px;
+    left: -35px;
+    box-shadow: inset 0px -5px 2px 0px #2c8eabff;
+}
+
+.attribution{
+    display: flex;
+    padding-bottom: 1rem;
+    justify-content: center;
+}
+
+#rulesContainer{
+    position: fixed;
+    display: none;
+    top: 0rem;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+
+#rules{
+    display: flex;
+    flex-direction: column;
+    right: calc(50% - 240px);
+    position: absolute;
+    top: 10rem;
+    width: 420px;
+    height: 70%;
+    background-color: white;
+    padding: 0rem 2rem 3rem 2rem;
+    border-radius: 10px;
+    color: #000;
+}
+
+#rules .rulesHeading{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+#rules img{
+    display: flex;
+    align-self: center;
+    height: 330px;
+    width: 330px;
+}
+
+#rules .rulesHeading img{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    bottom: 20px;
+}
+#rules .rulesHeading img:hover{
+    cursor: pointer;
+}
+#rules h2{
+    margin: 0;
+}
+
+#rulesBtn{
+    display: flex;
+    margin-top: 175px;
+    height: 60px;
+    width: 125px;
+    border: 3px solid #596780;
+    border-radius: 8px;
+    color: #fff;
+    background-color: transparent;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+#rulesBtn:hover{
+    cursor: pointer;
+}
+
+
+/* after Chosing */
+
+#picks{
+    width: 100%;
+    display: none;
+    margin-top: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#picks img{
+    width: 50px;
+    height: 50px;
+}
+
+.pickChoices{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 3rem;
+    width: 40%;
+}
+
+.pickChoices h3{
+    font-size: 14px;
+    margin-top: 2rem;
+}
+
+.pickChoices .gameImg{
+    width: 100px;
+    height: 100px;
+}
+
+.pickChoices .lizard, .pickChoices .spock,
+.pickChoices .rock, .pickChoices .paper, 
+.pickChoices .scissors{
+    width: 130px;
+    height: 130px;
+}
+
+.pickChoices .shadow-top{
+    box-shadow: inset 0px 10px 3px -3px #d1d1d1;
+}
+
+.pickChoices .rock{
+    box-shadow: inset 0px -10px 2px 0px #811633ff
+}
+
+.pickChoices.paper{
+    box-shadow: inset 0px -10px 2px 0px #2841b5ff
+}
+
+.pickChoices .scissors{
+    box-shadow: inset 0px -10px 2px 0px #be681c
+}
+
+.pickChoices .spock{
+    box-shadow: inset 0px -10px 2px 0px #2c8eabff
+}
+
+.pickChoices .lizard{
+    box-shadow: inset 0px -10px 2px 0px #5f37a8ff;
+}
+
+.emptyChoice{
+    margin: 1.5rem;
+    background-color: #16193C;
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+}
+
+#results{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+    order: 3;
+}
+.choice1{
+    order: 1;
+}
+
+.choice2{
+    order: 2;
+}
+.m-top1{
+    margin-top: 1rem;
+}
+.choice2 img{
+    display: none
+}
+#results p{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 3rem 0 1rem 0;
+}
+
+#results button{
+    text-transform: uppercase;
+    padding: 0.6rem 2rem;
+    border-radius: 8px;
+    margin: 0 1rem;
+}
+#results button:hover{
+    cursor: pointer;
+    color: red
+}
+
+
+/* Query Desktop */
+@media screen and (min-width: 768px){
+    main{
+        max-height: 705px;
+    }
+
+    #scoreBlock{
+        width: 50%;
+        max-width: 700px;
+        margin-top: 3.5rem;
+        padding: 1rem;
+    }
+
+    #score{
+        width: 150px;
+        height: 110px;
+    }
+
+    #scoreBlock ul{
+        font-size: 18px;
+    }
+
+    #score h5{
+        font-size: 14px;
+        margin-top: 1.5rem;
+    }
+    
+    .scoreNumber{
+        font-size: 50px;
+    }
+
+    #pentagon img{
+        width: 60px;
+        height: 60px;
+    }
+
+    .gameChoices{
+        width: 320px;
+        height: 300px;
+    }
+
+    .gameImg{
+        width: 110px;
+        height: 110px;
+    }
+
+    .scissors, .paper, .rock, .lizard, .spock{
+        width: 140px;
+        height: 140px;
+    }
+
+    .scissors{
+        right: calc(50% - 70px);
+        top: -70px;
+    }
+    .paper{
+        top: 40px;
+        right: -55px;
+    }
+    .rock{
+        bottom: -55px;
+        right: -5px;
+    }
+    .lizard{
+        bottom: -55px;
+        left: -5px;
+    }
+    .spock{
+        top: 40px;
+        left: -55px;
+    }
+    .attribution{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Rules */
+    #rulesContainer{
+        background-color: #0a0a0a94;
+    }
+
+    #rules{
+        top: 10rem;
+        height: 370px;
+        padding-top: 2rem;
+    }
+
+    #rules .rulesHeading{
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    #rules .rulesHeading img{
+       right: 37px;
+       top: 37px;
+    }
+
+    #rulesBtn{
+        position: absolute;
+        bottom: 2.5rem;
+        right: 3rem;
+        height: 60px;
+    }
+
+    /* After Chosing */
+    
+    .pickChoices .gameImg{
+        width: 225px;
+        height: 225px;
+    }
+
+    .pickChoices{
+        flex-direction: column;
+        padding: 0 ;
+        margin: 0;
+        width: 25%;
+    }
+
+    .pickChoices h3{
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 5rem;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .pickChoices .lizard, .pickChoices .spock,
+    .pickChoices .rock, .pickChoices .paper, 
+    .pickChoices .scissors{
+        width: 300px;
+        height: 300px;
+    }
+    .emptyChoice{
+        width: 225px;
+        height: 225px;
+    }
+    #picks img{
+        width: 90px;
+        height: 90px;
+    }
+    .choice1{
+        display: flex;
+        order: 1;
+    }
+    .choice2{
+        display: flex;
+        order: 3;
+        margin-left: 10rem;
+    }
+    
+    #results{
+        height: 60%;
+        display: none;
+        order: 2;
+    }
+
+    #results button{
+        margin: 0 2rem;
+    }
+}
