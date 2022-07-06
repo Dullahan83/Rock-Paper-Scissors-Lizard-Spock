@@ -10,6 +10,14 @@ function computerPick(){
     let randomNumber = Math.floor(Math.random() * 5)
     return tab[randomNumber]
 }
+function checkWindowSize(){
+    if($(window).width() > 768){
+        $("choice2").css("margin-left", "10rem")
+    }
+    else{
+        $("choice2").css("margin-left", "0")
+    }
+}
 
 function nextRound(e){
     compChoice = computerPick()
@@ -107,8 +115,11 @@ $("#results button").click(() => {
     $(".choice2 div:last").removeClass('gameImg shadow-top')
     $(".choice2 div:first").removeClass(compChoice)
     $(".choice2 img").css("display", "none")
-    $(".choice2").css('margin-left', "10rem")
     $('#results').css("display", "none")
+    if($(window).width() > 768){
+        $(".choice2").css('margin-left', "10rem")
+    }
+    
 })
 
 //Display rules panel

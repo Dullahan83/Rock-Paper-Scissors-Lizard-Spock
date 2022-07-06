@@ -5,6 +5,7 @@ body{
     text-transform: uppercase;
     color: #fff;
     position: relative;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 header{
@@ -38,9 +39,10 @@ header{
     list-style: none;
     margin: 0;
     padding: 0;
+}
+li{
     font-size: 14px;
 }
-
 #score{
     display: flex;
     background-color: #fff;
@@ -359,7 +361,9 @@ main{
     main{
         max-height: 705px;
     }
-
+    li{
+        font-size: 18px;
+    }
     #scoreBlock{
         width: 50%;
         max-width: 700px;
