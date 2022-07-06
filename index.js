@@ -19,27 +19,43 @@ function checkWindowSize(){
     }
 }
 
+function playSound(name){
+    var audio = new Audio("./sounds/" + name + ".mp3")
+    audio.play()
+}
+
 function nextRound(e){
     compChoice = computerPick()
     playerChoice =  e.target.closest("button").classList[0]
     $(".gameChoices" ).css("display", "none")
     $("#picks").css("display", "flex")
     $(".choice1 div:first").addClass(playerChoice)
-    $(".choice1 img").attr("src", `/images/icon-${playerChoice}.svg`)
+    $(".choice1 img").attr("src", `./images/icon-${playerChoice}.svg`)
     
     const winner = calculateWinner(compChoice, playerChoice)
     
     let result
     if(playerChoice == compChoice){
         result= "it's a tie"
+        setTimeout(()=> {
+            playSound("tie")
+        },1000)
     }
     else if(typeof winner != undefined && winner != playerChoice){
         result= "you lose"
         score--
+        setTimeout(()=> {
+            playSound("lost")
+        },1000)
+        
     }
     else if(typeof winner != undefined && winner == playerChoice){
         result='you win'
         score++
+        setTimeout(()=> {
+            playSound("won")
+        },1000)
+        
     }
         
 
@@ -48,15 +64,16 @@ function nextRound(e){
         $(".choice2 div:last").addClass('gameImg shadow-top')
         $(".choice2 div:first").addClass(compChoice)
         $(".choice2 img").css("display", "flex")
-        $(".choice2 img").attr("src", `/images/icon-${compChoice}.svg`)
+        $(".choice2 img").attr("src", `./images/icon-${compChoice}.svg`)
     }, 500);
 
     setTimeout(() => {
         $(".choice2").css('margin-left', "0")
         $('#results').css("display", "flex")
         $('#results p').text(result)
+        $('.scoreNumber').text(score)
     },1000)
-    $('.scoreNumber').text(score)
+    
 }
 
 function calculateWinner(compChoice, playerChoice){
