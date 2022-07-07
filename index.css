@@ -16,9 +16,9 @@ header{
 
 #wrapper{
     /* Created with https://www.css-gradient.com */
-    background: -webkit-radial-gradient(top, #1E3253, #16193C);
-    background: -moz-radial-gradient(top, #1E3253, #16193C);
-    background: radial-gradient(to bottom, #1E3253, #16193C);
+    background: -webkit-radial-gradient(top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background: -moz-radial-gradient(top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background: radial-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -27,7 +27,7 @@ header{
 #scoreBlock{
     width: 80%;
     border-radius: 10px;
-    border: 3px solid #596780;
+    border: 3px solid hsl(217, 16%, 45%);
     display: flex;
     padding: 0.8rem;
     justify-content: space-between;
@@ -51,7 +51,7 @@ li{
     align-items: center;
     flex-direction: column;
     height: 80px;
-    color: blue ;
+    color: hsl(229, 64%, 46%) ;
 }
 
 #score h5{
@@ -63,7 +63,7 @@ li{
 .scoreNumber{
     margin: 0;
     font-size: 40px;
-    color: rgba(0, 0, 0, 0.658);
+    color: hsl(229, 25%, 31%);
 }
 
 main{
@@ -107,8 +107,7 @@ main{
     height: 70px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .shadow-top{
@@ -133,35 +132,35 @@ main{
 }
 
 .scissors{
-    background-color: #eba724ff;
+    background: linear-gradient(180deg, hsl(39, 89%, 49%) 0%, hsl(40, 84%, 53%) 100%);
     right: calc(50% - 50px);
     top: -50px;
     box-shadow: inset 0px -5px 0px 0px #be681c;
 }
 
 .paper{
-    background-color: #5270f5ff;
+    background: linear-gradient(180deg, hsl(230, 89%, 62%)0%, hsl(230, 89%, 65%) 100%);
     top: 25px;
     right: -35px;
     box-shadow: inset 0px -5px 2px 0px #2841b5ff;
 }
 
 .rock{
-    background-color: #dc3c5aff;
+    background: linear-gradient(180deg, hsl(349, 71%, 52%)0%, hsl(349, 70%, 56%) 100%);
     bottom: -35px;
     right: 0px;
     box-shadow: inset 0px -5px 2px 0px #811633ff;
 }
 
 .lizard{
-    background-color:#895be4ff ;
+    background: linear-gradient(180deg, hsl(261, 73%, 60%)0%, hsl(261, 72%, 63%) 100%);
     bottom: -35px;
     left: 0px;
     box-shadow: inset 0px -5px 2px 0px #5f37a8ff;
 }
 
 .spock{
-    background-color: #4ebbceff;
+    background: linear-gradient(180deg, hsl(189, 59%, 53%)0%, hsl(189, 58%, 57%) 100%);
     top: 25px;
     left: -35px;
     box-shadow: inset 0px -5px 2px 0px #2c8eabff;
@@ -228,7 +227,7 @@ main{
     margin-top: 175px;
     height: 60px;
     width: 125px;
-    border: 3px solid #596780;
+    border: 3px solid hsl(217, 16%, 45%);
     border-radius: 8px;
     color: #fff;
     background-color: transparent;
