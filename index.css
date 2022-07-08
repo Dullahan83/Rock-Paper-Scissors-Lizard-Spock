@@ -414,7 +414,7 @@ main{
         width: 50%;
         max-width: 700px;
         margin-top: 3.5rem;
-        padding: 1rem;
+        padding: 0.5rem 0.8rem;
     }
 
     #score{
@@ -422,8 +422,8 @@ main{
         height: 110px;
     }
 
-    #scoreBlock ul{
-        font-size: 18px;
+    #scoreBlock ul li{
+        font-size: 20px;
     }
 
     #score h5{
