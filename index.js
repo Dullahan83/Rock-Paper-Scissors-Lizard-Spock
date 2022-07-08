@@ -6,17 +6,16 @@ let score = 0
 let isStarted = false;
 $('.scoreNumber').text(score)
 
+function saveScore(score){
+    localStorage.setItem("score", score)
+}
+function getScore(){
+   return localStorage.getItem("score")
+}
+
 function computerPick(){
     let randomNumber = Math.floor(Math.random() * 5)
     return tab[randomNumber]
-}
-function checkWindowSize(){
-    if($(window).width() > 768){
-        $("choice2").css("margin-left", "10rem")
-    }
-    else{
-        $("choice2").css("margin-left", "0")
-    }
 }
 
 function playSound(name){
@@ -72,8 +71,13 @@ function nextRound(e){
         $('#results').css("display", "flex")
         $('#results p').text(result)
         $('.scoreNumber').text(score)
+        if(winner == playerChoice){
+            $(".container1").css("display", "flex")
+        }
+        else if(winner == compChoice){
+            $(".container2").css("display", "flex")
+        }
     },1000)
-    
 }
 
 function calculateWinner(compChoice, playerChoice){
@@ -133,10 +137,12 @@ $("#results button").click(() => {
     $(".choice2 div:first").removeClass(compChoice)
     $(".choice2 img").css("display", "none")
     $('#results').css("display", "none")
+    $(".container1").css("display", "none")
+    $(".container2").css("display", "none")
     if($(window).width() > 768){
-        $(".choice2").css('margin-left', "10rem")
+        $(".choice2").css('margin-left', "7rem")
     }
-    
+    saveScore(score)
 })
 
 //Display rules panel

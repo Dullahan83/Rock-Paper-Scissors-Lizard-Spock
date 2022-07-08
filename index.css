@@ -1,11 +1,13 @@
+
 body{
-    
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     color: #fff;
     position: relative;
     font-family: 'Barlow Semi Condensed', sans-serif;
+    z-index: 1;
+    overflow: hidden;
 }
 
 header{
@@ -33,12 +35,15 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 #scoreBlock ul{
     list-style: none;
     margin: 0;
     padding: 0;
+    z-index: 1;
 }
 li{
     font-size: 14px;
@@ -71,8 +76,7 @@ main{
     align-items: center;
     width: 100%;
     flex-direction: column;
-    height: 100vh;
-    max-height: 765px;
+    height: calc(100vh  - 175px);
 }
 
 .gameChoices{
@@ -99,6 +103,8 @@ main{
 
 .roundBorder{
     border-radius: 50%;
+    z-index: 1;
+    position: relative;
 }
 
 .gameImg{
@@ -123,9 +129,6 @@ main{
     align-items: center;
 }
 
-.invisible{
-    display: none;
-}
 
 .absolute{
     position: absolute;
@@ -224,12 +227,13 @@ main{
 
 #rulesBtn{
     display: flex;
-    margin-top: 175px;
-    height: 60px;
+    margin-top: 150px;
+    height: 40px;
     width: 125px;
     border: 3px solid hsl(217, 16%, 45%);
     border-radius: 8px;
     color: #fff;
+    padding: 0.5rem 0;
     background-color: transparent;
     text-transform: uppercase;
     align-items: center;
@@ -265,11 +269,13 @@ main{
     padding: 0 1rem;
     margin-top: 3rem;
     width: 40%;
+    position: relative;
 }
 
 .pickChoices h3{
     font-size: 14px;
     margin-top: 2rem;
+    z-index: 1;
 }
 
 .pickChoices .gameImg{
@@ -323,6 +329,7 @@ main{
     justify-content: center;
     margin: 0 2rem;
     order: 3;
+    animation: scale 500ms ease forwards;
 }
 .choice1{
     order: 1;
@@ -331,34 +338,74 @@ main{
 .choice2{
     order: 2;
 }
+
 .m-top1{
     margin-top: 1rem;
 }
+
 .choice2 img{
     display: none
 }
 #results p{
-    font-size: 30px;
+    font-size: 55px;
     font-weight: bold;
     margin: 3rem 0 1rem 0;
 }
 
 #results button{
     text-transform: uppercase;
-    padding: 0.6rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 8px;
     margin: 0 1rem;
+    border: none;
+    color: hsl(229, 25%, 31%);
+    font-weight: 700;
+    width: 220px;
 }
 #results button:hover{
     cursor: pointer;
     color: red
 }
 
+.container1, .container2{
+    display: none;
+    z-index: 0;
+}
+.circle{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    top: 15px;
+    right: calc(50% - 5rem);
+}
+
+.delay1{
+    background-color: transparent;
+    animation: wave 2.5s linear 1;
+    border: 0px solid #21304fff;
+    /* border: 0px solid #21304fff; */
+}
+.delay2{
+    background-color: transparent;
+    animation: wave 2.5s linear 0.7s 1;
+    border: 0px solid #263554ff;
+}
+.delay3{
+    background-color: transparent;
+    animation: wave 2.5s linear 1.3s 1;
+    border: 0px solid #293251ff;
+}
+.delay4{
+    background-color: transparent;
+    animation: wave 2.5s linear 1.9s 1;
+    border: 0px solid rgb(52, 60, 92);
+}
 
 /* Query Desktop */
 @media screen and (min-width: 768px){
     main{
-        max-height: 705px;
+        height: calc(100vh  - 225px);
     }
     li{
         font-size: 18px;
@@ -459,7 +506,7 @@ main{
         position: absolute;
         bottom: 2.5rem;
         right: 3rem;
-        height: 60px;
+        height: 40px;
     }
 
     /* After Chosing */
@@ -479,7 +526,7 @@ main{
     .pickChoices h3{
         font-size: 16px;
         margin: 0;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
         padding: 0;
         width: 100%;
         text-align: center;
@@ -506,7 +553,7 @@ main{
     .choice2{
         display: flex;
         order: 3;
-        margin-left: 10rem;
+        margin-left: 7rem;
     }
     
     #results{
@@ -517,5 +564,85 @@ main{
 
     #results button{
         margin: 0 2rem;
+    }
+
+    .circle{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        top: 3.1rem;
+        right: calc(50% - 10.3rem);
+        z-index: -1;
+    }
+    
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .pickChoices .gameImg{
+        width: 180px;
+        height: 180px;
+    }
+
+    .pickChoices{
+        flex-direction: column;
+        padding: 0 ;
+        margin: 0;
+        width: 25%;
+    }
+
+    .pickChoices .lizard, .pickChoices .spock,
+    .pickChoices .rock, .pickChoices .paper, 
+    .pickChoices .scissors{
+        width: 245px;
+        height: 245px;
+    }
+    .emptyChoice{
+        width: 180px;
+        height: 180px;
+    }
+    #picks img{
+        width: 90px;
+        height: 90px;
+    }
+    #results{
+        margin: 0 ;
+    }
+    .circle{
+        width: 245px;
+        height: 245px;
+        top: 50px;
+        right: calc(50% - 8.5rem);
+    }
+    .choice1, .choice2{
+        margin-top: 3.5rem;
+    }
+    .choice2{
+        margin-left: 7rem;
+    }
+}
+
+@keyframes scale{
+    0%{
+        transform-origin: center;
+        transform: scaleX(0);
+    }
+    100%{
+        transform-origin: center;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes wave {
+    0%{
+        transform-origin: center;
+        transform: scale(1);
+        opacity: 0;
+        border-width:15px;
+    }
+    100%{
+        transform-origin: center;
+        transform: scale(2);
+        opacity: 0.3;
+        border-width: 15px;
     }
 }
