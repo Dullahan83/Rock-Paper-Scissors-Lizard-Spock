@@ -76,6 +76,7 @@ function nextRound(e){
         }
         else if(winner == compChoice){
             $(".container2").css("display", "flex")
+            $(".choice1").css("z-index", "1")
         }
     },1000)
 }
@@ -133,6 +134,7 @@ $("#results button").click(() => {
     $("#picks").css("display", "none")
     $(".choice1 div:first").removeClass(playerChoice)
     $(".choice2 div:last").addClass('emptyChoice')
+    $(".choice1").css("z-index", "0")
     $(".choice2 div:last").removeClass('gameImg shadow-top')
     $(".choice2 div:first").removeClass(compChoice)
     $(".choice2 img").css("display", "none")
