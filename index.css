@@ -331,12 +331,12 @@ main{
 }
 .choice1{
     order: 1;
-    height: 47%;
+    height: 50%;
 }
 
 .choice2{
     order: 2;
-    height: 47%;
+    height: 50%;
 }
 
 .m-top1{
@@ -376,7 +376,7 @@ main{
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    top: 1.9rem;
+    top: 1rem;
     right: calc(50% - 4.1rem);
 }
 
@@ -662,7 +662,7 @@ main{
     }
     100%{
         transform: translate(5rem, -5rem) scale(1);
-        opacity: 0.3;
+        opacity: 0.2;
         border-width: 5rem;
     }
 }
