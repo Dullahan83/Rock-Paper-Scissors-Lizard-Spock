@@ -237,6 +237,8 @@ main{
     align-items: center;
     justify-content: center;
     margin-bottom: 3rem;
+    position: absolute;
+    bottom: 0;
 }
 
 #rulesBtn:hover{
@@ -326,17 +328,15 @@ main{
     align-items: center;
     margin: 0 2rem;
     order: 3;
-    animation: scaleY 1s ease forwards;
+    animation: scaleX 1s ease forwards;
     z-index: 2;
 }
 .choice1{
     order: 1;
-    height: 50%;
 }
 
 .choice2{
     order: 2;
-    height: 50%;
 }
 
 .m-top1{
